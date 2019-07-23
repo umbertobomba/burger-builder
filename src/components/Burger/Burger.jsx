@@ -10,17 +10,12 @@ const StyledContainer = styled.div`
     overflow: scroll;
 `
 
-const Burger = () => {
+const Burger = ({ config }) => {
     return (
         <StyledContainer>
-            <BurgerIngredient type="bread-top" />
-            <BurgerIngredient type="cheese" />
-            <BurgerIngredient type="meat" />
-            <BurgerIngredient type="cheese" />
-            <BurgerIngredient type="salad" />
-            <BurgerIngredient type="bacon" />
-            <BurgerIngredient type="meat" />
-            <BurgerIngredient type="bread-bottom" />
+            {config.map((ingredient, i) => (
+                <BurgerIngredient type={ingredient} key={i}/>
+            ))}
         </StyledContainer>
     )   
 }
